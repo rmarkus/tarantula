@@ -25,6 +25,10 @@ class BugTrackersController < ApplicationController
       # FIXME: Bugzilla implementation is hard coded for mysql
       @data.delete_if {|k,v| k.match(/adapter/)}
       tracker = Bugzilla.create!(@data)
+    elsif @data["type"] == "Mantis"
+      # FIXME: Bugzilla implementation is hard coded for mysql
+      @data.delete_if {|k,v| k.match(/adapter/)}
+      tracker = Mantis.create!(@data)
     elsif @data["type"] == "Jira"
       source = ImportSource.create!({
                                       :adapter => @data['db_adapter'],

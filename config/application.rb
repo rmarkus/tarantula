@@ -127,5 +127,11 @@ BT_CONFIG = {
     :fixed_statuses => ['RESOLVED'],
     :verified_statuses => ['VERIFIED'],
     :closed_statuses => ['CLOSED']
+  },
+  :mantis => {
+    :open_statuses => ['NEW', 'ASSIGNED', 'REOPENED'],
+    :fixed_statuses => ['RESOLVED'],
+    :verified_statuses => ['VERIFIED'],
+    :closed_statuses => ['CLOSED']
   }
 }

@@ -76,6 +76,13 @@ Ext.testia.BugtrackerDlg = function(config) {
                             inputValue: 'Jira',
                             boxLabel: 'Jira'
                         }),
+                        new Ext.form.Radio({
+                            id: 'typeMantis',
+                            labelSeparator: '',
+                            name: 'type',
+                            inputValue: 'Mantis',
+                            boxLabel: 'Mantis'
+                        }),
                         new Ext.form.Checkbox({
                             fieldLabel: 'Sync Tarantula project with Bugzilla classification',
                             name: 'sync_project_with_classification',
@@ -145,6 +152,7 @@ Ext.testia.BugtrackerDlg = function(config) {
                     }
                     // Disable type changin on saved trackers
                     this.dForm.findField( 'typeJira').disable();
+                    this.dForm.findField( 'typeMantis').disable();
                     this.dForm.findField( 'typeBugzilla').disable();
                 }
             });
@@ -153,6 +161,7 @@ Ext.testia.BugtrackerDlg = function(config) {
             // Disable type changin on saved trackers
             this.dForm.findField( 'typeJira').enable();
             this.dForm.findField( 'typeBugzilla').enable();
+            this.dForm.findField( 'typeMantis').enable();
         }
     }, this);
 
